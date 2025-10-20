@@ -1,0 +1,1 @@
+docker run anthonyjhoiro/whalesay --rm "Hello M1 Cyber 2025"
