@@ -1,0 +1,20 @@
+5-comparison.txt — comparaison courte
+
+Commandes (depuis la racine du repo) :
+
+  # build "avant"
+  docker build -t bloated-app -f go-app/bloated-go-app.dockerfile go-app/
+
+  # build optimisé
+  docker build -t optimized-app -f 5-optimized.dockerfile go-app/
+
+Voir les tailles :
+
+  docker images --format "{{.Repository}} {{.Size}}" | Select-String app
+
+
+Vérification rapide :
+
+  docker run --rm -p 8080:8080 optimized-app
+  curl http://localhost:8080/health
+
