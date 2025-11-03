@@ -1,10 +1,10 @@
 FROM node:24-bullseye
 
 WORKDIR ./
-COPY ./broken-app ./
+COPY ./ ./
 RUN npm install
 
-RUN useradd -ms /bin/bash audrey
+RUN useradd audrey
 USER audrey
 
 EXPOSE 3000
